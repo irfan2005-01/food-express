@@ -1,11 +1,17 @@
 import { Heart, ShoppingCart, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function FoodCard({ food }) {
   return (
-    <div className="group rounded-3xl bg-white p-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-
+    <Link
+      to={`/food/${food.id}`}
+      className="group block rounded-3xl bg-white p-5 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+    >
       <div className="relative">
-        <button className="absolute right-0 top-0 rounded-full bg-white p-2 shadow">
+        <button
+          onClick={(e) => e.preventDefault()}
+          className="absolute right-0 top-0 rounded-full bg-white p-2 shadow"
+        >
           <Heart size={18} />
         </button>
 
@@ -31,11 +37,14 @@ export default function FoodCard({ food }) {
             ₹{food.price}
           </h2>
 
-          <button className="rounded-full bg-orange-500 p-3 text-white transition hover:bg-orange-600">
+          <button
+            onClick={(e) => e.preventDefault()}
+            className="rounded-full bg-orange-500 p-3 text-white transition hover:bg-orange-600"
+          >
             <ShoppingCart size={20} />
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
