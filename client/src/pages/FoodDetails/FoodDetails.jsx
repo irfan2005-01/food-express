@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import popularFoods from "../../data/popularFoods";
+import { useCart } from "../../context/CartContext";
 
 export default function FoodDetails() {
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   const food = popularFoods.find(
     (item) => item.id === Number(id)
@@ -18,9 +20,7 @@ export default function FoodDetails() {
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
-
       <div className="grid gap-16 md:grid-cols-2">
-
         <img
           src={food.image}
           alt={food.name}
@@ -28,7 +28,6 @@ export default function FoodDetails() {
         />
 
         <div>
-
           <h1 className="text-5xl font-bold">
             {food.name}
           </h1>
@@ -43,22 +42,13 @@ export default function FoodDetails() {
           </h2>
 
           <button
-            className="
-            mt-10
-            rounded-full
-            bg-orange-500
-            px-10
-            py-4
-            text-white
-            hover:bg-orange-600"
+            onClick={() => addToCart(food)}
+            className="mt-10 rounded-full bg-orange-500 px-10 py-4 text-white transition hover:bg-orange-600"
           >
             Add To Cart
           </button>
-
         </div>
-
       </div>
-
     </section>
   );
 }

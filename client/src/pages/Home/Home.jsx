@@ -1,15 +1,11 @@
-import Hero from "../../components/home/Hero/Hero";
-import Categories from "../../components/home/Categories/Categories";
-import PopularFoods from "../../components/home/PopularFoods/PopularFoods";
-import FeaturedRestaurants from "../../components/home/FeaturedRestaurants/FeaturedRestaurants";
+import { useCart } from "../../context/CartContext";
 
 export default function Home() {
+  const { cartItems } = useCart();
+
   return (
-    <>
-      <Hero />
-      <Categories />
-      <PopularFoods />
-      <FeaturedRestaurants />
-    </>
+    <div className="p-20 text-5xl">
+      Cart Items : {cartItems.length}
+    </div>
   );
 }
