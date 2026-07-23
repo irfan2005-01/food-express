@@ -1,0 +1,31 @@
+.
+├── config
+│   ├── cloudinary.js
+│   └── db.js
+├── controllers
+│   ├── authController.js
+│   ├── foodController.js
+│   ├── orderController.js
+│   └── userController.js
+├── middleware
+│   ├── authMiddleware.js
+│   └── upload.js
+├── models
+│   ├── Food.js
+│   ├── Order.js
+│   └── User.js
+├── package.json
+├── package-lock.json
+├── routes
+│   ├── authRoutes.js
+│   ├── foodRoutes.js
+│   ├── orderRoutes.js
+│   └── userRoutes.js
+├── seed
+│   ├── foodData.js
+│   └── importData.js
+├── server.js
+├── server-tree.txt
+└── utils
+
+8 directories, 21 files

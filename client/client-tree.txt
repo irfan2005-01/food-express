@@ -1,0 +1,128 @@
+.
+├── client-tree.txt
+├── index.html
+├── package.json
+├── package-lock.json
+├── public
+├── README.md
+├── src
+│   ├── App.jsx
+│   ├── assets
+│   │   ├── banners
+│   │   ├── hero.png
+│   │   ├── icons
+│   │   ├── images
+│   │   │   ├── burger-double.png
+│   │   │   ├── burger-normal.png
+│   │   │   ├── hero-burger.png
+│   │   │   ├── hero-pasta.png
+│   │   │   └── hero-pizza.png
+│   │   └── logos
+│   ├── components
+│   │   ├── common
+│   │   │   ├── Button
+│   │   │   │   └── Button.jsx
+│   │   │   ├── EmptyState
+│   │   │   │   └── EmptyState.jsx
+│   │   │   ├── FoodCard
+│   │   │   │   └── FoodCard.jsx
+│   │   │   ├── Loader
+│   │   │   │   └── Loader.jsx
+│   │   │   ├── Rating
+│   │   │   │   └── Rating.jsx
+│   │   │   ├── RestaurantCard
+│   │   │   │   └── RestaurantCard.jsx
+│   │   │   ├── SearchBar
+│   │   │   │   └── SearchBar.jsx
+│   │   │   └── SectionTitle
+│   │   │       └── SectionTitle.jsx
+│   │   ├── home
+│   │   │   ├── Categories
+│   │   │   │   └── Categories.jsx
+│   │   │   ├── Deals
+│   │   │   │   └── Deals.jsx
+│   │   │   ├── FeaturedRestaurants
+│   │   │   │   └── FeaturedRestaurants.jsx
+│   │   │   ├── Hero
+│   │   │   │   ├── HeroContent.jsx
+│   │   │   │   ├── HeroImage.jsx
+│   │   │   │   └── Hero.jsx
+│   │   │   ├── Newsletter
+│   │   │   │   └── Newsletter.jsx
+│   │   │   ├── PopularFoods
+│   │   │   │   └── PopularFoods.jsx
+│   │   │   ├── Testimonials
+│   │   │   │   └── Testimonials.jsx
+│   │   │   └── WhyChooseUs
+│   │   │       └── WhyChooseUs.jsx
+│   │   ├── layout
+│   │   │   ├── Footer
+│   │   │   │   ├── Footer.css
+│   │   │   │   └── Footer.jsx
+│   │   │   └── Navbar
+│   │   │       ├── Logo.jsx
+│   │   │       ├── MobileMenu.jsx
+│   │   │       ├── NavActions.jsx
+│   │   │       ├── Navbar.css
+│   │   │       ├── Navbar.jsx
+│   │   │       ├── navLinks.js
+│   │   │       └── NavLinks.jsx
+│   │   ├── menu
+│   │   │   ├── CategoryFilter.jsx
+│   │   │   ├── FoodGrid.jsx
+│   │   │   └── MenuSearch.jsx
+│   │   └── ui
+│   │       ├── Badge
+│   │       ├── Input
+│   │       └── Modal
+│   ├── constants
+│   │   └── constants.js
+│   ├── context
+│   │   ├── AppContext.jsx
+│   │   └── CartContext.jsx
+│   ├── data
+│   │   ├── categories.js
+│   │   ├── foods.js
+│   │   └── restaurants.js
+│   ├── hooks
+│   ├── index.css
+│   ├── layouts
+│   │   └── MainLayout.jsx
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── Admin
+│   │   │   └── Admin.jsx
+│   │   ├── Cart
+│   │   │   └── Cart.jsx
+│   │   ├── Checkout
+│   │   │   └── Checkout.jsx
+│   │   ├── FoodDetails
+│   │   │   └── FoodDetails.jsx
+│   │   ├── Home
+│   │   │   └── Home.jsx
+│   │   ├── Login
+│   │   │   └── Login.jsx
+│   │   ├── Menu
+│   │   │   └── Menu.jsx
+│   │   ├── Offers
+│   │   │   └── Offers.jsx
+│   │   ├── Orders
+│   │   │   └── Orders.jsx
+│   │   ├── Profile
+│   │   │   └── Profile.jsx
+│   │   ├── Register
+│   │   │   └── Register.jsx
+│   │   └── Restaurants
+│   │       └── Restaurants.jsx
+│   ├── routes
+│   │   └── AppRoutes.jsx
+│   ├── services
+│   │   ├── api.js
+│   │   └── foodService.js
+│   ├── styles
+│   │   └── global.css
+│   └── utils
+│       └── helpers.js
+└── vite.config.js
+
+57 directories, 69 files

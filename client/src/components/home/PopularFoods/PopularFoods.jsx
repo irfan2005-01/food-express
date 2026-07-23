@@ -1,24 +1,51 @@
+import { useEffect, useState } from "react";
 import FoodCard from "../../common/FoodCard/FoodCard";
-import popularFoods from "../../../data/popularFoods";
+import  SectionTitle  from "../../common/SectionTitle/SectionTitle";
+import { getFoods } from "../../../services/foodService";
+
 export default function PopularFoods() {
+  const [foods, setFoods] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPopularFoods = async () => {
+      try {
+        const data = await getFoods();
+        setFoods(data.slice(0, 3));
+      } catch (error) {
+        console.error("Error fetching popular foods:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPopularFoods();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="py-12 text-center text-lg font-medium text-gray-500">
+        Loading popular dishes...
+      </div>
+    );
+  }
+
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="py-16">
       <div className="mx-auto max-w-7xl px-6">
+        <SectionTitle
+          subtitle="Customer Favorites"
+          title="Popular Food Items"
+        />
 
-        <h2 className="text-center text-4xl font-bold">
-          Popular Foods
-        </h2>
-
-        <p className="mt-3 text-center text-gray-500">
-          Most ordered dishes from our customers.
-        </p>
-
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {popularFoods.map((food) => (
-            <FoodCard key={food.id} food={food} />
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {foods.map((food, index) => (
+            <FoodCard
+              key={food._id || food.id || index}
+              food={food}
+            />
           ))}
         </div>
-
       </div>
     </section>
   );

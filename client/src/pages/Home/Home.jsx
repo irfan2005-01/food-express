@@ -1,11 +1,19 @@
-import { useCart } from "../../context/CartContext";
+import Hero from "../../components/home/Hero/Hero";
+import Categories from "../../components/home/Categories/Categories";
+import PopularFoods from "../../components/home/PopularFoods/PopularFoods";
+import WhyChooseUs from "../../components/home/WhyChooseUs/WhyChooseUs";
+import FeaturedRestaurants from "../../components/home/FeaturedRestaurants/FeaturedRestaurants";
+import Newsletter from "../../components/home/Newsletter/Newsletter";
 
 export default function Home() {
-  const { cartItems } = useCart();
-
   return (
-    <div className="p-20 text-5xl">
-      Cart Items : {cartItems.length}
-    </div>
+    <>
+      <Hero />
+      <Categories />
+      <PopularFoods />
+      <WhyChooseUs />
+      <FeaturedRestaurants />
+      <Newsletter />
+    </>
   );
 }

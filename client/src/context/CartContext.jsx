@@ -5,13 +5,17 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
+  // Helper to handle both MongoDB _id and local data id
+  const getItemId = (item) => item?._id || item?.id;
+
   const addToCart = (food) => {
+    const foodId = getItemId(food);
     setCartItems((prev) => {
-      const exists = prev.find((item) => item.id === food.id);
+      const exists = prev.find((item) => getItemId(item) === foodId);
 
       if (exists) {
         return prev.map((item) =>
-          item.id === food.id
+          getItemId(item) === foodId
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -24,7 +28,7 @@ export function CartProvider({ children }) {
   const increaseQuantity = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>
-        item.id === id
+        getItemId(item) === id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
@@ -35,7 +39,7 @@ export function CartProvider({ children }) {
     setCartItems((prev) =>
       prev
         .map((item) =>
-          item.id === id
+          getItemId(item) === id
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
@@ -45,8 +49,12 @@ export function CartProvider({ children }) {
 
   const removeItem = (id) => {
     setCartItems((prev) =>
-      prev.filter((item) => item.id !== id)
+      prev.filter((item) => getItemId(item) !== id)
     );
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
   };
 
   const total = useMemo(() => {
@@ -73,6 +81,7 @@ export function CartProvider({ children }) {
         increaseQuantity,
         decreaseQuantity,
         removeItem,
+        clearCart,
       }}
     >
       {children}
